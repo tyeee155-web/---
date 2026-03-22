@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>💖</title>
+
+<style>
+  body {
+    background: radial-gradient(circle, #ffd6e7, #ffb6c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: pop 0.8s ease;
+  }
+
+  h1 {
+    color: #ff4d88;
+  }
+
+  @keyframes pop {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* 💖 หัวใจลอย */
+  .heart {
+    position: absolute;
+    color: #ff4d88;
+    animation: float 4s linear infinite;
+  }
+
+  @keyframes float {
+    0% {transform: translateY(100vh);}
+    100% {transform: translateY(-10vh);}
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <img src="https://media.tenor.com/W7pFZ8YF9rQAAAAC/cute-cat.gif" width="150"><br>
+  <h1>🥰 รักนะข้าววว 💖</h1>
+  <p>อยู่ด้วยกันไปนานๆนะ 😆</p>
+</div>
+
+<script>
+// 💖 สร้างหัวใจลอย
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💖";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (Math.random()*20+10)+"px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 4000);
+}, 300);
+</script>
+
+</body>
+</html>
